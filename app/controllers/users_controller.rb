@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			flash[:notice] = "Sign-up Successful!"
 			redirect_to user_path(@user) and return
 		end
 		render 'new'
