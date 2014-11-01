@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 			flash[:notice] = "Sign-up Successful!"
 			redirect_to user_path(@user) and return
 		end
+		flash[:alert] = 'Sign-up Failed'
 		render 'new'
 	end
 
