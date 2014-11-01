@@ -9,9 +9,9 @@ FactoryGirl.define do
   end
 
   factory :invalid_user, :class => User do
-		name nil
-		email nil
-		password nil
-		password_confirmation nil
+		name ''
+		email ''
+		password ''
+		password_confirmation ''
 	end
 end
