@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
 	def create
 		@task = current_user.tasks.create(task_params)
-		redirect_to user_task_path(@task.user, @task)
+		redirect_to user_task_path(@task.user, @task), notice: 'Successfully created Task!'
 	end
 
 	def show
