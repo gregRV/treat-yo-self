@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+
+<h3><%= @task.title %></h3>
+
+<p>Description: <%= @task.description %></p>
+
+<p>Reward: <%= @task.reward %> Tix</p>
