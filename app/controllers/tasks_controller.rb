@@ -5,8 +5,12 @@ class TasksController < ApplicationController
 	end
 
 	def create
-		@task = current_user.tasks.create(task_params)
-		redirect_to user_task_path(@task.user, @task), notice: 'Successfully created Task!'
+		@task = current_user.tasks.new(task_params)
+		if @task.save
+			redirect_to user_task_path(@task.user, @task), notice: 'Successfully created Task!' and return
+		end
+		flash[:notice] = 'Failed to create Task'
+		render :new
 	end
 
 	def show
