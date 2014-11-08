@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:new, :create, :show]
   end
 
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'users#new'
 
