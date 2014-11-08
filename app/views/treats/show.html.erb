@@ -1,0 +1,7 @@
+<h3><%= @treat.title %></h3>
+
+<p>Description: <%= @treat.description %></p>
+<p>Price: <%= @treat.price %> Tix</p>
+<% if @treat.img_url %>
+	<%= image_tag @treat.img_url %>
+<% end %>

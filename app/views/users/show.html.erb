@@ -3,3 +3,17 @@
 <% end %>
 
 <h3>Welcome, <%= @user.name %></h3>
+
+<h4>Tasks</h4>
+<ul>
+	<% @user.tasks.each do |t| %>
+		<li><%= link_to t.title, user_task_path(@user, t) %> (<%= t.reward %>)</li>
+	<% end %>
+</ul>
+
+<h4>Treats</h4>
+<ul>
+	<% @user.treats.each do |t| %>
+		<li><%= link_to t.title, user_treat_path(@user, t) %> (<%= t.price %>)</li>
+	<% end %>
+</ul>
